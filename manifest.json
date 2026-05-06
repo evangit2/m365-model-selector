@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "M365 Copilot Model Selector",
-  "version": "3.4",
+  "version": "3.5",
   "description": "Automatically selects GPT 5.5 Think Deeper on Microsoft 365 Copilot Chat",
   "browser_specific_settings": {
     "gecko": {
