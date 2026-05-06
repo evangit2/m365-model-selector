@@ -25,10 +25,10 @@
     switch (event.data.type) {
       case 'log': console.log('%c[MS main]%c ' + event.data.message, 'color:#6c63ff', ''); break;
       case 'found':
-        if (event.data.already || event.data.set) { stat('✅ GPT 5.5 Think Deeper'); done = true; }
+        if (event.data.already || event.data.set) { stat('GPT 5.5 Think Deeper'); done = true; }
         else stat('Found: ' + event.data.message);
         break;
-      case 'error': stat('❌ ' + event.data.message); break;
+      case 'error': stat('Error: ' + event.data.message); break;
     }
   });
 

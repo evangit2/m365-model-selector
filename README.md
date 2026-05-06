@@ -1,6 +1,8 @@
 # M365 Model Selector
 
-Chrome extension that automatically selects **GPT 5.5 Think Deeper** on Microsoft 365 Copilot Chat — every time, no clicks required.
+Browser extension that automatically selects **GPT 5.5 Think Deeper** on Microsoft 365 Copilot Chat — every time, no clicks required.
+
+Works on Chrome, Firefox, Edge, Brave, and Arc.
 
 ## What it does
 
@@ -10,15 +12,23 @@ Navigates the Fluent UI model selector menu to switch from "Auto" to "GPT 5.5 Th
 
 ### From source (developer mode)
 
+**Chrome / Edge / Brave / Arc:**
 1. Clone this repo or download the ZIP
 2. Go to `chrome://extensions`
-3. Enable **Developer mode** (toggle in top right)
+3. Enable **Developer mode**
 4. Click **Load unpacked** and select the repo folder
-5. Navigate to [M365 Copilot Chat](https://m365.cloud.microsoft/chat)
+
+**Firefox:**
+1. Clone this repo or download the ZIP
+2. Go to `about:debugging#/runtime/this-firefox`
+3. Click **Load Temporary Add-on**
+4. Select any file in the repo folder (e.g. `manifest.json`)
+
+Then navigate to [M365 Copilot Chat](https://m365.cloud.microsoft/chat). The model switches automatically.
 
 ## Privacy
 
-This extension collects nothing. It runs entirely within your browser and communicates with no external servers. See the [privacy policy](https://evangit2.github.io/m365-model-selector/privacy.html) for details.
+This extension collects nothing. It runs entirely within your browser and communicates with no external servers. See the [privacy policy](https://evangit2.github.io/m365-model-selector/privacy.html).
 
 ## Permissions
 
@@ -40,6 +50,7 @@ docs/             GitHub Pages landing page and privacy policy
 
 ## Links
 
-- [GitHub Pages](https://evangit2.github.io/m365-model-selector/)
+- [Landing page](https://evangit2.github.io/m365-model-selector/)
 - [Privacy Policy](https://evangit2.github.io/m365-model-selector/privacy.html)
 - [Chrome Web Store](https://chromewebstore.google.com/detail/mmnblofgjnekeknmjaondpcafpcpiflg)
+- [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/m365-model-selector/)

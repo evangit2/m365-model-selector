@@ -35,7 +35,7 @@
       if (r.top >= 100 || r.width <= 30 || r.height <= 0 || r.width >= 400) continue;
       if (t !== 'auto' && !/gpt|think/i.test(t)) continue;
       if ((b.textContent||'').includes(TARGET)) {
-        post('found','✅ '+TARGET,{already:true}); return;
+        post('found', TARGET, {already:true}); return;
       }
       click(b);
       setTimeout(() => {
@@ -46,7 +46,7 @@
           const m = find('GPT 5.5 Think Deeper');
           if (!m) return;
           click(m);
-          post('found','✅ '+TARGET,{set:true});
+          post('found', TARGET, {set:true});
         }, 600);
       }, 600);
       return;

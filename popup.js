@@ -6,6 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const debugToggle = document.getElementById('debug');
   const statusEl = document.getElementById('status');
 
+  function statusClass(text) {
+    if (!text) return '';
+    if (text.startsWith('Error')) return 'status warning';
+    if (text.includes('GPT 5.5') || text === 'Selecting model...') return 'status success';
+    return 'status warning';
+  }
+
   // Load saved settings
   chrome.storage.local.get(['enabled', 'modelName', 'debug', 'lastStatus', 'lastTime'], (result) => {
     enabledToggle.checked = result.enabled !== false;
@@ -15,9 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (result.lastStatus) {
       const time = result.lastTime ? new Date(result.lastTime).toLocaleTimeString() : '';
       statusEl.textContent = `${result.lastStatus} ${time ? `(${time})` : ''}`;
-      statusEl.className = result.lastStatus.startsWith('✅') ? 'status success' : 'status warning';
+      statusEl.className = 'status ' + statusClass(result.lastStatus);
     } else {
-      statusEl.textContent = 'Ready — open Chat page to use';
+      statusEl.textContent = 'Ready -- open Chat page to use';
     }
   });
 
@@ -39,11 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (changes.lastStatus) {
       const status = changes.lastStatus.newValue;
       statusEl.textContent = status;
-      statusEl.className = status.startsWith('✅') ? 'status success' : 'status warning';
+      statusEl.className = 'status ' + statusClass(status);
     }
   });
 
-  // Reset button — clear storage and reload
+  // Reset button -- clear storage and reload
   document.getElementById('reset').addEventListener('click', () => {
     chrome.storage.local.set({ modelName: 'GPT 5.5 Think Deeper', enabled: true, debug: false }, () => {
       window.close();
