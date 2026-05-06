@@ -16,6 +16,7 @@
   },
   "permissions": ["storage"],
   "host_permissions": ["https://m365.cloud.microsoft/*"],
+  "data_collection_permissions": [],
   "web_accessible_resources": [
     {
       "resources": ["main.js"],
