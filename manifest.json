@@ -6,6 +6,10 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "m365-model-selector@evanrice.dev",
+      "strict_min_version": "109.0",
+      "data_collection_permissions": []
+    },
+    "gecko_android": {
       "strict_min_version": "109.0"
     }
   },
@@ -16,7 +20,6 @@
   },
   "permissions": ["storage"],
   "host_permissions": ["https://m365.cloud.microsoft/*"],
-  "data_collection_permissions": [],
   "web_accessible_resources": [
     {
       "resources": ["main.js"],
